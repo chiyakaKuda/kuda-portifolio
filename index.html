@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional portfolio showcasing UI/UX design, responsive web design, and visual development work">
-    <title>Your Name - Product Designer & Visual Developer</title>
+    <title>Kudakwashe Chiyaka - SOftware Engineer.</title>
     
     <!-- Favicon with black background, white K letter, and border -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%2296%22 height=%2296%22 x=%222%22 y=%222%22 fill=%22black%22 stroke=%22white%22 stroke-width=%224%22 rx=%2210%22 /><text x=%2250%22 y=%2275%22 font-size=%2270%22 text-anchor=%22middle%22 fill=%22white%22 style=%22font-family: Arial, sans-serif; font-weight: bold;%22>K</text></svg>" type="image/svg+xml">
@@ -821,7 +821,273 @@
 html {
     scroll-behavior: smooth;
 }
+/*Services offered by Kuda*/
+.services-section {
+    padding: 5rem 0;
+    min-height: 100vh;
+    background-color: var(--light-bg-color);
+    position: relative;
+    overflow: hidden;
+}
 
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.services-intro {
+    flex: 1;
+    max-width: 450px;
+}
+
+.services-description {
+    color: #4a5568;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.services-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #36b37e;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+.services-tabs {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.service-tab {
+    flex: 1;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: #36b37e;
+    transition: height 0.4s ease;
+}
+
+.service-tab:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-tab:hover::before,
+.service-tab.active::before {
+    height: 100%;
+}
+
+.service-tab.active {
+    background-color: rgba(54, 179, 126, 0.05);
+    border-left: 4px solid #36b37e;
+}
+
+.tab-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(54, 179, 126, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #36b37e;
+}
+
+.service-tab:hover .tab-icon,
+.service-tab.active .tab-icon {
+    background-color: rgba(54, 179, 126, 0.2);
+    transform: scale(1.1);
+}
+
+.tab-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #2d3748;
+}
+
+.tab-content p {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.tab-details-container {
+    background-color: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-details-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #36b37e, #ff9933);
+}
+
+.tab-detail {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.tab-detail.active {
+    display: block;
+}
+
+.tab-detail h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.tab-detail p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 1.5rem;
+    list-style: none;
+}
+
+.service-features li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+.service-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #36b37e;
+    border-radius: 50%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        
+       
+    
+/*They end here*/
+@media (max-width: 992px) {
+    .services-container {
+        flex-direction: column;
+    }
+    
+    .services-intro {
+        max-width: 100%;
+    }
+    
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+}
         /* Mobile Responsiveness */
     @media (max-width: 768px) {
         
@@ -945,6 +1211,35 @@ html {
     .api-icon {
         bottom: 20%;
         right: 20%;
+    }
+    .tab-row {
+        flex-direction: column;
+    }
+    
+    .services-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .tab-details-container {
+        padding: 1.5rem;
+    }
+    
+    .service-tab {
+        padding: 1rem;
+    }
+    
+    .tab-icon {
+        width: 40px;
+        height: 40px;
     }
 }
     
@@ -1141,8 +1436,201 @@ html {
 
     <!-- Services Section Placeholder -->
     <section id="services" class="services-section section-animate">
-        <div class="container">
-            <h2>Services Section Coming Soon</h2>
+        <div class="services-container">
+            <!-- Left side content -->
+            <div class="services-intro">
+                <div class="subtitle">MY SERVICES 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 8L21 12M21 12L17 16M21 12H3" stroke="#ff9933" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 class="title">Transforming <span class="highlight">Ideas</span> into Digital Reality</h2>
+                <p class="services-description">I offer comprehensive digital solutions tailored to your unique needs. From concept to execution, I focus on creating intuitive, visually appealing, and high-performing digital experiences that help your business stand out.</p>
+                
+                <div class="services-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/yournumberhere" class="whatsapp-btn" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21L5 17L4.5 16.5C3.5 15.5 2.5 14.3 2 13C1.5 11.7 1 10 1 8C1 4.1 4.1 1 8 1C11.9 1 15 4.1 15 8C15 11.9 11.9 15 8 15C6.7 15 5.4 14.6 4.2 14L3.8 13.8L3 14L3 21Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 7C16.3333 7.66667 17.3333 8.33333 18 9C18.6667 9.66667 19.3333 10.6667 20 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 3C17.3333 4.33333 19.3333 5.66667 21 7C22.6667 8.33333 23.3333 10.3333 23 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Let's Discuss Your Project
+                </a>
+            </div>
+            
+            <!-- Right side tabs -->
+            <div class="services-tabs">
+                <div class="tabs-container">
+                    <div class="tab-row">
+                        <div class="service-tab active" data-tab="ui-design">
+                            <div class="tab-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M19.4 15C19.1277 15.8031 19.2583 16.6718 19.7601 17.37C20.2619 18.0281 20.9547 18.4342 21.6 18.5C21.6 18.5 22 20.4 20 21.5C18 22.6 16.5 20.5 16.5 20.5C15.8853 20.5 15.2921 20.2888 14.8402 19.9023C14.3883 19.5158 14.1132 18.9828 14.07 18.41C14.07 18.41 13.04 18.31 12 18.31C10.96 18.31 9.93 18.41 9.93 18.41C9.88685 18.9828 9.61175 19.5158 9.15981 19.9023C8.70788 20.2888 8.11469 20.5 7.5 20.5C7.5 20.5 6 22.6 4 21.5C2 20.4 2.4 18.5 2.4 18.5C3.04532 18.4342 3.73806 18.0281 4.23988 17.3699C4.7417 16.7118 4.87231 15.8431 4.6 15.04C4.6 15.04 3 14.07 3 12C3 9.93 4.6 8.96 4.6 8.96C4.87231 8.15687 4.7417 7.28821 4.23988 6.63012C3.73806 5.97204 3.04532 5.56583 2.4 5.5C2.4 5.5 2 3.6 4 2.5C6 1.4 7.5 3.5 7.5 3.5C8.11469 3.5 8.70788 3.71116 9.15981 4.09772C9.61175 4.48428 9.88685 5.01718 9.93 5.59C9.93 5.59 10.96 5.69 12 5.69C13.04 5.69 14.07 5.59 14.07 5.59C14.1132 5.01718 14.3883 4.48428 14.8402 4.09772C15.2921 3.71116 15.8853 3.5 16.5 3.5C16.5 3.5 18 1.4 20 2.5C22 3.6 21.6 5.5 21.6 5.5C20.9547 5.56583 20.2619 5.97204 19.7601 6.63012C19.2583 7.28821 19.1277 8.15687 19.4 8.96C19.4 8.96 21 9.93 21 12C21 14.07 19.4 15.04 19.4 15.04V15Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="tab-content">
+                                <h3>UI/UX Design</h3>
+                                <p>User-centered interfaces that delight</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-tab" data-tab="web-dev">
+                            <div class="tab-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 5H21V19H3V5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M7 9L11 12L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="tab-content">
+                                <h3>Web Development</h3>
+                                <p>Fast, responsive, and accessible websites</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-row">
+                        <div class="service-tab" data-tab="mobile-dev">
+                            <div class="tab-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="7" y1="6" x2="17" y2="6" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="7" y1="18" x2="17" y2="18" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="15" r="1" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="tab-content">
+                                <h3>Mobile Development</h3>
+                                <p>Native and cross-platform mobile apps</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-tab" data-tab="branding">
+                            <div class="tab-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 7H22M16 2V7M8 2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="2" y="7" width="20" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M7 12H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M7 16H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="tab-content">
+                                <h3>Branding & Identity</h3>
+                                <p>Cohesive visual systems that tell your story</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-row">
+                        <div class="service-tab" data-tab="ecommerce">
+                            <div class="tab-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M5.4 5H21L17 13H7M5.4 5L7 13M7 13L4.707 15.293C4.077 15.923 4.523 17 5.414 17H17M17 17C16.4696 17 15.9609 17.2107 15.5858 17.5858C15.2107 17.9609 15 18.4696 15 19C15 19.5304 15.2107 20.0391 15.5858 20.4142C15.9609 20.7893 16.4696 21 17 21C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19C19 18.4696 18.7893 17.9609 18.4142 17.5858C18.0391 17.2107 17.5304 17 17 17ZM9 19C9 19.5304 8.78929 20.0391 8.41421 20.4142C8.03914 20.7893 7.53043 21 7 21C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19C5 18.4696 5.21071 17.9609 5.58579 17.5858C5.96086 17.2107 6.46957 17 7 17C7.53043 17 8.03914 17.2107 8.41421 17.5858C8.78929 17.9609 9 18.4696 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="tab-content">
+                                <h3>E-commerce Solutions</h3>
+                                <p>Online stores that convert visitors to customers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-tab" data-tab="consulting">
+                            <div class="tab-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="tab-content">
+                                <h3>Digital Consulting</h3>
+                                <p>Strategic guidance for your digital transformation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab details container -->
+                <div class="tab-details-container">
+                    <div class="tab-detail active" id="ui-design-detail">
+                        <h3>UI/UX Design</h3>
+                        <p>I create intuitive, engaging user experiences that balance aesthetics with functionality. My design process is deeply rooted in user research and testing to ensure your digital products not only look beautiful but also work seamlessly for your users.</p>
+                        <ul class="service-features">
+                            <li>User Research & Personas</li>
+                            <li>Wireframing & Prototyping</li>
+                            <li>Interaction Design</li>
+                            <li>Usability Testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-detail" id="web-dev-detail">
+                        <h3>Web Development</h3>
+                        <p>I build responsive, high-performance websites that work flawlessly across all devices. Using modern frameworks and best practices, I ensure your web presence is not only visually impressive but also technically sound.</p>
+                        <ul class="service-features">
+                            <li>Responsive Web Design</li>
+                            <li>Frontend Development</li>
+                            <li>CMS Integration</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-detail" id="mobile-dev-detail">
+                        <h3>Mobile Development</h3>
+                        <p>I develop native and cross-platform mobile applications that provide seamless experiences on iOS and Android devices. My focus is on creating intuitive interfaces with smooth interactions and optimal performance.</p>
+                        <ul class="service-features">
+                            <li>iOS & Android Development</li>
+                            <li>React Native Applications</li>
+                            <li>Progressive Web Apps</li>
+                            <li>App Store Optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-detail" id="branding-detail">
+                        <h3>Branding & Identity</h3>
+                        <p>I help businesses establish cohesive visual identities that resonate with their target audience. From logo design to comprehensive brand guidelines, I create systems that communicate your unique value proposition.</p>
+                        <ul class="service-features">
+                            <li>Logo & Visual Identity</li>
+                            <li>Brand Guidelines</li>
+                            <li>Marketing Materials</li>
+                            <li>Brand Strategy</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-detail" id="ecommerce-detail">
+                        <h3>E-commerce Solutions</h3>
+                        <p>I build online stores that not only showcase your products beautifully but also convert visitors into customers. My e-commerce solutions focus on user experience, performance, and seamless checkout processes.</p>
+                        <ul class="service-features">
+                            <li>Custom E-commerce Websites</li>
+                            <li>Shopping Cart Development</li>
+                            <li>Payment Gateway Integration</li>
+                            <li>Inventory Management Systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-detail" id="consulting-detail">
+                        <h3>Digital Consulting</h3>
+                        <p>I provide strategic guidance to help businesses navigate their digital transformation journey. From technology selection to implementation roadmaps, I offer insights that drive meaningful results.</p>
+                        <ul class="service-features">
+                            <li>Digital Strategy Development</li>
+                            <li>Technology Assessment</li>
+                            <li>Process Optimization</li>
+                            <li>Growth Consulting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1159,8 +1647,27 @@ html {
             <h2>Contact Section Coming Soon</h2>
         </div>
     </section>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
+       const serviceTabs = document.querySelectorAll('.service-tab');
+const tabDetails = document.querySelectorAll('.tab-detail');
+
+serviceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        serviceTabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Hide all tab details
+        tabDetails.forEach(detail => detail.classList.remove('active'));
+        
+        // Show the corresponding tab detail
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(`${tabId}-detail`).classList.add('active');
+    });
+});
       document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
