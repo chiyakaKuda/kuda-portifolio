@@ -628,7 +628,21 @@
 .specialization-item {
     opacity: 0;
 }
-        
+        /* Simple slide-in animation for sections */
+.section-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+html {
+    scroll-behavior: smooth;
+}
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .mobile-nav-toggle {
@@ -636,24 +650,28 @@
             }
             
             .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                gap: 1.5rem;
-                transform: translateY(-150%);
-                transition: transform 0.3s ease;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 999;
             }
             
             .nav-menu.active {
                 transform: translateY(0);
             }
-            
+            .mobile-nav-toggle {
+        display: block;
+    }
             .hero-heading {
                 font-size: 2.25rem;
             }
@@ -701,7 +719,7 @@
         transform: translateX(-50%);
     }
     }
-        
+}
     </style>
 </head>
 <body>
@@ -721,7 +739,7 @@
     </header>
 
     <!-- Landing Page Section -->
-    <section class="hero">
+    <section class="hero section-animate">
         <div class="container">
             <div class="hero-content">
                 <div class="avatar-container">
@@ -751,7 +769,7 @@
 
     <!-- About Section -->
    <!-- About Section -->
-<section id="about" class="about-section">
+<section id="about" class="about-section section-animate">
     <div class="about-container">
         <!-- Left content section -->
         <div class="about-content">
@@ -822,7 +840,7 @@
         <!-- Right visual section -->
         <div class="about-visual">
             <div class="image-container">
-                <img src="img/mukomana2.jpg" alt="Professional portrait" />
+                <img src="img/mukomana3.jpg" alt="Professional portrait" />
                 <div class="tag tag-1">CREATIVE</div>
                 <div class="tag tag-2">PROBLEM SOLVER</div>
                 <div class="tag tag-3">INNOVATIVE</div>
@@ -852,27 +870,87 @@
 
 
     <!-- Services Section Placeholder -->
-    <section id="services" class="services-section">
+    <section id="services" class="services-section section-animate">
         <div class="container">
             <h2>Services Section Coming Soon</h2>
         </div>
     </section>
 
     <!-- Work Section Placeholder -->
-    <section id="work" class="work-section">
+    <section id="work" class="work-section section-animate">
         <div class="container">
             <h2>Work Section Coming Soon</h2>
         </div>
     </section>
 
     <!-- Contact Section Placeholder -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section section-animate">
         <div class="container">
             <h2>Contact Section Coming Soon</h2>
         </div>
     </section>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Setup Intersection Observer for section animations
+    const animatedSections = document.querySelectorAll('.section-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when at least 10% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Slightly adjust the trigger point
+    });
+    
+    animatedSections.forEach(section => {
+        observer.observe(section);
+    });
+    
+    // Smooth scroll navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the target section
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                // Scroll to the section
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80, // Adjust for header height
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Close mobile menu if open
+            document.querySelector('.nav-menu').classList.remove('active');
+            document.querySelector('.mobile-nav-toggle').textContent = '☰';
+        });
+    });
+    
+    // Mobile menu toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    mobileNavToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileNavToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Make the first section visible immediately
+    const firstSection = document.querySelector('.section-animate');
+    if (firstSection) {
+        firstSection.classList.add('visible');
+    }
+});
+
         // Mobile menu toggle
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
