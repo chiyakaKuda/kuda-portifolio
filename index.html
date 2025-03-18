@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcasing UI/UX design, responsive web design, and visual development work">
+    <title>Your Name - Product Designer & Visual Developer</title>
+    
+    <!-- Favicon with black background, white K letter, and border -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%2296%22 height=%2296%22 x=%222%22 y=%222%22 fill=%22black%22 stroke=%22white%22 stroke-width=%224%22 rx=%2210%22 /><text x=%2250%22 y=%2275%22 font-size=%2270%22 text-anchor=%22middle%22 fill=%22white%22 style=%22font-family: Arial, sans-serif; font-weight: bold;%22>K</text></svg>" type="image/svg+xml">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #333333;
+            --accent-color: #0066ff;
+            --background-color: #ffffff;
+            --light-bg-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --padding-section: 5rem 2rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        .hero {
+            padding: var(--padding-section);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: calc(100vh - 80px);
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .avatar-container {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background-color: #e8f3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .greeting {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .hand-emoji {
+            font-size: 1.5rem;
+        }
+        
+        .hero-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-subheading {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* About Section Styles */
+        .about-section {
+            padding: var(--padding-section);
+            background-color: var(--light-bg-color);
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        
+        /* Profile Column */
+        .profile-column {
+            flex: 1;
+            background-color: var(--background-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-image-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #e8f3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .profile-image {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-title {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-details, .contact-details {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-item, .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-details h4, .interests h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            text-align: left;
+        }
+        
+        .contact-details h4:after, .interests h4:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .icon {
+            width: 30px;
+            font-size: 1.1rem;
+            margin-right: 1rem;
+        }
+        
+        .interests {
+            width: 100%;
+            text-align: left;
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .interest-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .interest-icon {
+            font-size: 1.1rem;
+        }
+        
+        /* Info Column */
+        .info-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .about-bio, .experience-section, .skills-section {
+            background-color: var(--background-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-bio h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .about-bio p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .experience-section h3, .skills-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .experience-section h3:after, .skills-section h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            left: -2.3rem;
+            top: 0.3rem;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-company {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-details {
+            padding-left: 1.2rem;
+        }
+        
+        .timeline-details li {
+            margin-bottom: 0.25rem;
+        }
+        
+        .abilities h4, .software-skills h4, .language-section h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .abilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ability-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .ability-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e8f3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+        
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .software-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .software-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .figma {
+            background-color: #F24E1E;
+        }
+        
+        .xd {
+            background-color: #FF61F6;
+        }
+        
+        .ps {
+            background-color: #31A8FF;
+        }
+        
+        .ai {
+            background-color: #FF9A00;
+        }
+        
+        .language-item {
+            margin-bottom: 1rem;
+        }
+        
+        .language-name {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .language-bar {
+            height: 8px;
+            background-color: #e8e8e8;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .language-progress {
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .profile-column, .info-column {
+                width: 100%;
+            }
+            
+            .software-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-heading {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                padding-top: 5rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 999;
+                gap: 2rem;
+                align-items: center;
+            }
+            
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .abilities-grid, .interests-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-section {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-heading {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .software-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .profile-column, .info-column > div {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">yourname.design</a>
+                <ul class="nav-menu">
+                    <li><a href="#work" class="nav-link">Works</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="mobile-nav-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Landing Page Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="avatar-container">
+                    <img src="your-photo.jpg" alt="Your Name" class="avatar">
+                </div>
+                <div class="greeting">
+                    Hi, I'm Your Name <span class="hand-emoji">👋</span>
+                </div>
+                <h1 class="hero-heading">
+                    Building digital products, brands, and experience.
+                </h1>
+                <h2 class="hero-subheading">
+                    a Product Designer and Visual Developer in Your Location.
+                </h2>
+                <p class="hero-description">
+                    I specialize in UI/UX Design, Responsive Web Design, and Visual Development.
+                </p>
+                <a href="#contact" class="btn">CONNECT WITH ME</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <!-- Left Column: Profile Info -->
+                <div class="profile-column">
+                    <div class="profile-image-container">
+                        <!-- Replace with your actual image path -->
+                        <img src="your-profile-image.jpg" alt="Your Name" class="profile-image">
+                    </div>
+                    
+                    <h3 class="profile-name">Your Name</h3>
+                    <p class="profile-title">Product Designer & Visual Developer</p>
+                    
+                    <div class="profile-details">
+                        <div class="profile-item">
+                            <div class="icon">📅</div>
+                            <div class="detail">Date of Birth</div>
+                        </div>
+                        
+                        <div class="profile-item">
+                            <div class="icon">📍</div>
+                            <div class="detail">Your Location</div>
+                        </div>
+                        
+                        <div class="profile-item">
+                            <div class="icon">🎓</div>
+                            <div class="detail">Your Education</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <h4>Contact</h4>
+                        
+                        <div class="contact-item">
+                            <div class="icon">📱</div>
+                            <div class="detail">Your Phone Number</div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="icon">✉️</div>
+                            <div class="detail">your.email@example.com</div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="icon">🔗</div>
+                            <div class="detail">yourwebsite.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="interests">
+                        <h4>Interests</h4>
+                        <div class="interests-grid">
+                            <div class="interest-item">
+                                <div class="interest-icon">🎵</div>
+                                <div class="interest-label">Music</div>
+                            </div>
+                            <div class="interest-item">
+                                <div class="interest-icon">📚</div>
+                                <div class="interest-label">Reading</div>
+                            </div>
+                            <div class="interest-item">
+                                <div class="interest-icon">✈️</div>
+                                <div class="interest-label">Travel</div>
+                            </div>
+                            <div class="interest-item">
+                                <div class="interest-icon">🎮</div>
+                                <div class="interest-label">Gaming</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Experience and Skills -->
+                <div class="info-column">
+                    <div class="about-bio">
+                        <h3>Hello!</h3>
+                        <p>I'm a passionate Product Designer and Visual Developer with expertise in creating intuitive and visually appealing digital experiences. With a strong foundation in both design principles and development technologies, I bridge the gap between aesthetics and functionality.</p>
+                        <p>My goal is to create digital products that not only look beautiful but also provide exceptional user experiences. I enjoy collaborating with teams to bring innovative ideas to life.</p>
+                    </div>
+                    
+                    <div class="experience-section">
+                        <h3>Experience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2022-Present</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Senior Product Designer</div>
+                                    <div class="timeline-company">Company Name</div>
+                                    <ul class="timeline-details">
+                                        <li>Lead the design of flagship products</li>
+                                        <li>Collaborate with cross-functional teams</li>
+                                        <li>Implement design systems and UI libraries</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2019-2022</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">UI/UX Designer</div>
+                                    <div class="timeline-company">Previous Company</div>
+                                    <ul class="timeline-details">
+                                        <li>Designed user interfaces for web and mobile applications</li>
+                                        <li>Conducted user research and usability testing</li>
+                                        <li>Created wireframes, prototypes, and high-fidelity designs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2017-2019</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Visual Designer</div>
+                                    <div class="timeline-company">First Company</div>
+                                    <ul class="timeline-details">
+                                        <li>Developed brand identities and visual assets</li>
+                                        <li>Created marketing materials and digital content</li>
+                                        <li>Assisted with website design and frontend development</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-section">
+                        <h3>Skills</h3>
+                        
+                        <div class="abilities">
+                            <h4>Abilities</h4>
+                            <div class="abilities-grid">
+                                <div class="ability-item">
+                                    <div class="ability-icon">🎨</div>
+                                    <div class="ability-name">UI/UX Design</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-icon">📱</div>
+                                    <div class="ability-name">Responsive Design</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-icon">💻</div>
+                                    <div class="ability-name">Front-end Development</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-icon">📊</div>
+                                    <div class="ability-name">Visual Design</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="software-skills">
+                            <h4>Software Skills</h4>
+                            <div class="software-grid">
+                                <div class="software-item">
+                                    <div class="software-icon figma">Fg</div>
+                                    <div class="software-name">Figma</div>
+                                </div>
+                                <div class="software-item">
+                                    <div class="software-icon xd">Xd</div>
+                                    <div class="software-name">Adobe XD</div>
+                                </div>
+                                <div class="software-item">
+                                    <div class="software-icon ps">Ps</div>
+                                    <div class="software-name">Photoshop</div>
+                                </div>
+                                <div class="software-item">
+                                    <div class="software-icon ai">Ai</div>
+                                    <div class="software-name">Illustrator</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="language-section">
+                            <h4>Languages</h4>
+                            <div class="language-item">
+                                <div class="language-name">HTML/CSS</div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-name">JavaScript</div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-name">React</div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileNavToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileNavToggle.textContent = '☰';
+            });
+        });
+    </script>
+</body>
+</html>
