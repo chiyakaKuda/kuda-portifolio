@@ -9,12 +9,23 @@
 
     <!-- Favicon with black background, white K letter, and border -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%2296%22 height=%2296%22 x=%222%22 y=%222%22 fill=%22black%22 stroke=%22white%22 stroke-width=%224%22 rx=%2210%22 /><text x=%2250%22 y=%2275%22 font-size=%2270%22 text-anchor=%22middle%22 fill=%22white%22 style=%22font-family: Arial, sans-serif; font-weight: bold;%22>K</text></svg>" type="image/svg+xml">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preload" href="/img/mukomana2-optimized.jpg" as="image">
+    <link rel="preload" href="/img/avatar.webp" as="image">
+
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_0ew.woff2" crossorigin>
 </head>
+<style>
+    /* Inline critical font styles */
+    /* This is the Inter font (regular weight only for critical content) */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_0ew.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
 <body>
     <header>
         <div class="container">
@@ -78,7 +89,10 @@
             <div class="hero-content">
                 <div class="avatar-container">
                     <div class="avatar-rings"></div>
-                    <img src="/img/mukomana2.jpg" alt="Kudakwashe Chiyaka" class="avatar">
+                    <picture>
+                        <source srcset="/img/avatar.webp" type="image/webp">
+                        <img src="/img/mukomana2-optimized.jpg" alt="Kudakwashe Chiyaka" class="avatar" width="120" height="120">
+                      </picture>
                     <div class="status-indicator">
                         <span class="status-dot"></span>
                         <span class="status-text">Available</span>
@@ -175,7 +189,11 @@
         <!-- Right visual section -->
         <div class="about-visual">
             <div class="image-container">
-                <img src="img/mukomana3.jpg" alt="Professional portrait" />
+                <picture>
+                    <source srcset="img/mukomana3.webp" type="image/webp">
+                    <img src="img/mukomana3.jpg" alt="Professional portrait" width="550" height="600" loading="lazy" />
+                  </picture>
+                
                 <div class="tag tag-1">CREATIVE</div>
                 <div class="tag tag-2">PROBLEM SOLVER</div>
                 <div class="tag tag-3">INNOVATIVE</div>
@@ -474,7 +492,12 @@
                     <!-- Project 1: Portfolio Website -->
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="img/webpo.PNG" alt="Portfolio Website" onerror="this.src='https://via.placeholder.com/600x400/36b37e/FFFFFF?text=Portfolio+Website'">
+                            <picture>
+                                                                <source srcset="/img/webpo.webp" type="image/webp">
+                                <img src="/img/webpo.PNG" alt="Portfolio Website" width="600" height="400" 
+                                     onerror="this.src='https://via.placeholder.com/600x400/36b37e/FFFFFF?text=Portfolio+Website'">
+                              </picture>
+                           
                             <div class="project-type">Personal Website</div>
                         </div>
                         <div class="project-content">
@@ -511,7 +534,11 @@
                     <!-- Project 2: Library Management System -->
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="img/webpo.png" alt="Library Management System" onerror="this.src='https://via.placeholder.com/600x400/ff9933/FFFFFF?text=Library+System'">
+                            <picture>
+                                <source srcset="/img/webpo.webp" type="image/webp">
+                                <img src="/img/webpo.png" alt="Library Management System" width="600" height="400"
+                                     onerror="this.src='https://via.placeholder.com/600x400/ff9933/FFFFFF?text=Shamiso+Website'">
+                              </picture>
                             <div class="project-type">Desktop Application</div>
                         </div>
                         <div class="project-content">
@@ -540,7 +567,12 @@
                     <!-- Project 3: School Chatbot -->
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="img/webpo.png" alt="School Chatbot" onerror="this.src='https://via.placeholder.com/600x400/36b37e/FFFFFF?text=School+Chatbot'">
+                            <picture>
+                                >
+                                <source srcset="/img/webpo.webp" type="image/webp">
+                                <img src="/img/webpo.png" alt="School Assistant Chatbot" width="600" height="400"
+                                     onerror="this.src='https://via.placeholder.com/600x400/ff9933/FFFFFF?text=Shamiso+Website'">
+                              </picture>
                             <div class="project-type">AI Application</div>
                         </div>
                         <div class="project-content">
@@ -569,7 +601,11 @@
                     <!-- Project 4: Shamiso Website -->
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="img/webpo.png" alt="Shamiso Website" onerror="this.src='https://via.placeholder.com/600x400/ff9933/FFFFFF?text=Shamiso+Website'">
+                            <picture>
+                                     <source srcset="/img/webpo.webp" type="image/webp">
+                                <img src="/img/webpo.png" alt="Shamiso Website" width="600" height="400"
+                                     onerror="this.src='https://via.placeholder.com/600x400/ff9933/FFFFFF?text=Shamiso+Website'">
+                              </picture>
                             <div class="project-type">Business Website</div>
                         </div>
                         <div class="project-content">
@@ -1036,7 +1072,23 @@ toolItems.forEach((item, index) => {
         firstSection.classList.add('visible');
     }
 });
-
+(function() {
+    const fontLinks = [
+      'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+      'https://fonts.googleapis.com/css2?family=Pacifico&display=swap'
+    ];
+    
+    fontLinks.forEach(href => {
+      const link = document.createElement('link');
+      link.href = href;
+      link.rel = 'stylesheet';
+      link.media = 'print';
+      link.onload = function() {
+        this.media = 'all';
+      };
+      document.head.appendChild(link);
+    });
+  })();
 const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
     
